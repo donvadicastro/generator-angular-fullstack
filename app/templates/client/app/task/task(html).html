@@ -1,0 +1,39 @@
+<navbar></navbar>
+
+<div class="container">
+  <h3>Task managment</h3>
+  <div class="panel panel-info">
+    <div class="panel-heading">Add new task</div>
+    <div class="panel-body">
+      <form ng-submit="add()">
+        <div class="form-group">
+          <input name="name" placeholder="enter name..." ng-model="newTask.name" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-default">Add new</button>
+      </form>
+    </div>
+  </div>
+  <h3>Task list</h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Info</td>
+        <td>Created</td>
+        <td>Reserved</td>
+        <td>Completed</td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="task in tasks">
+        <td>{{task.name}}</td>
+        <td>{{task.info}}</td>
+        <td>{{task.created}}</td>
+        <td>{{task.reserved}}</td>
+        <td>{{task.completed}}</td>
+        <td><a ng-click="delete(task)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

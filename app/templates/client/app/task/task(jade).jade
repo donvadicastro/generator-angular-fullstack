@@ -1,0 +1,31 @@
+navbar
+.container
+  h3 Task managment
+  .panel.panel-info
+    .panel-heading Add new task
+    .panel-body
+      form(ng-submit="add()")
+        .form-group
+          input.form-control(name="name", placeholder="enter name...", ng-model="newTask.name")
+        button.btn.btn-default(type="submit") Add new
+
+  h3 Task list
+  table.table
+    thead
+      tr
+        td Name
+        td Info
+        td Created
+        td Reserved
+        td Completed
+        td
+    tbody
+      tr(ng-repeat='task in tasks')
+        td {{task.name}}
+        td {{task.info}}
+        td {{task.created}}
+        td {{task.reserved}}
+        td {{task.completed}}
+        td
+          a.trash(ng-click='delete(task)')
+            span.glyphicon.glyphicon-trash.pull-right
