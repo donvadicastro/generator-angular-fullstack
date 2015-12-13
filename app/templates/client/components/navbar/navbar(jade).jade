@@ -13,6 +13,9 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarController')
         li(ng-repeat='item in nav.menu', <% if (filters.uirouter) { %>ui-sref-active='active'<% } else { %>ng-class='{active: nav.isActive(item.link)}'<% } %>)
           a(<% if (filters.uirouter) { %>ui-sref='{{item.state}}'<% } else { %>ng-href='{{item.link}}'<% } %>) {{item.title}}<% if (filters.auth) { %>
 
+        li(ng-show='nav.isLoggedIn()', <% if (filters.uirouter) { %>ui-sref-active='active'<% } else { %>ng-class='{active: nav.isActive("/task")}'<% } %>)
+          a(<% if (filters.uirouter) { %>ui-sref='task'<% } else { %>href='/task'<% } %>) Task
+          
         li(ng-show='nav.isAdmin()', <% if (filters.uirouter) { %>ui-sref-active='active'<% } else { %>ng-class='{active: nav.isActive("/admin")}'<% } %>)
           a(<% if (filters.uirouter) { %>ui-sref='admin'<% } else { %>href='/admin'<% } %>) Admin
 

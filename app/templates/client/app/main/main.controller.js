@@ -5,9 +5,17 @@
 class MainController {
 
   constructor($http<% if (filters.socketio) { %>, $scope, socket<% } %>) {
+    this.Math = window.Math;
     this.$http = $http;
+    
     this.awesomeThings = [];
-
+    this.status = {};
+    
+    $http.get('/api/tasks/status').then(response => {
+		  this.status = response.data; <% if (filters.socketio) { %>
+      socket.syncUpdates('taskStatus', this.status);<% } %>
+	  });
+    
     $http.get('/api/things').then(response => {
       this.awesomeThings = response.data;<% if (filters.socketio) { %>
       socket.syncUpdates('thing', this.awesomeThings);<% } %>
@@ -15,6 +23,7 @@ class MainController {
 
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('thing');
+      socket.unsyncUpdates('taskStatus');
     });<% } %>
   }<% if (filters.models) { %>
 

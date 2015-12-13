@@ -15,5 +15,6 @@ var db = {
 
 // Insert models below<% if (filters.sequelizeModels && filters.auth) { %>
 db.User = db.sequelize.import('../api/user/user.model');<% } %>
+db.Task = db.sequelize.import('../api/task/task.model');
 
 module.exports = db;

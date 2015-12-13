@@ -10,6 +10,7 @@ import path from 'path';
 module.exports = function(app) {
 
   // Insert routes below<% if (filters.auth) { %>
+  app.use('/api/tasks', require('./api/task'));
   app.use('/api/users', require('./api/user'));
 
   app.use('/auth', require('./auth'));
