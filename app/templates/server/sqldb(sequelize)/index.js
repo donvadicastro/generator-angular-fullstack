@@ -9,7 +9,7 @@ import config from '../config/environment';
 import Sequelize from 'sequelize';
 
 var db = {
-  Sequelize: Sequelize,
+  Sequelize,
   sequelize: new Sequelize(config.sequelize.uri, config.sequelize.options)
 };
 
@@ -17,4 +17,4 @@ var db = {
 db.User = db.sequelize.import('../api/user/user.model');<% } %>
 db.Task = db.sequelize.import('../api/task/task.model');
 
-module.exports = db;
+export default db;

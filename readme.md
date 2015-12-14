@@ -1,8 +1,8 @@
 # AngularJS Full-Stack generator
-[![Build Status](https://travis-ci.org/DaftMonk/generator-angular-fullstack.svg?branch=master)](http://travis-ci.org/DaftMonk/generator-angular-fullstack)
+![Build Status](https://codeship.com/projects/26128390-800a-0133-c5f7-6a23b0487a18/status?branch=master)
 [![npm version](https://badge.fury.io/js/generator-angular-fullstack.svg)](http://badge.fury.io/js/generator-angular-fullstack)
-[![Dependency Status](https://david-dm.org/daftmonk/generator-angular-fullstack.svg)](https://david-dm.org/daftmonk/generator-angular-fullstack)
-[![Dev-Dependency Status](https://david-dm.org/daftmonk/generator-angular-fullstack/dev-status.svg)](https://david-dm.org/daftmonk/generator-angular-fullstack#info=devDependencies)
+[![Dependency Status](https://david-dm.org/angular-fullstack/generator-angular-fullstack.svg)](https://david-dm.org/angular-fullstack/generator-angular-fullstack)
+[![Dev-Dependency Status](https://david-dm.org/angular-fullstack/generator-angular-fullstack/dev-status.svg)](https://david-dm.org/angular-fullstack/generator-angular-fullstack#info=devDependencies)
 [![Gitter chat](https://badges.gitter.im/DaftMonk/generator-angular-fullstack.svg)](https://gitter.im/DaftMonk/generator-angular-fullstack)
 > Yeoman generator for creating MEAN stack applications, using MongoDB, Express, AngularJS, and Node - lets you quickly set up a project following best practices.
 
@@ -46,7 +46,7 @@ Run `grunt` for building, `grunt serve` for preview, and `grunt serve:dist` for 
 
 **General**
 
-* Build Systems: `Grunt`, `Gulp` (Coming Soon)
+* Build Systems: `Grunt`, `Gulp` (experimental)
 * Testing: 
   * `Jasmine`
   * `Mocha + Chai + Sinon`
@@ -118,6 +118,7 @@ Options:
         --skip-cache    # Do not remember prompt answers                        Default: false
         --skip-install  # Do not install dependencies                           Default: false
         --app-suffix    # Allow a custom suffix to be added to the module name  Default: App
+        --gulp          # Use the experimental Gulp config instead of Grunt     Default: false
 
 Arguments:
   name    Type: String  Required: false
